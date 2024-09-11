@@ -48,10 +48,12 @@ const FilmCard = ({ film }: { film: Film }) => {
 
             {/* Watch Button */}
             <div className="flex space-x-2">
-              <button className="flex items-center justify-center px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 w-full">
-                <PlayIcon href="/video" className="h-4 w-4 mr-1" />
-                <span>Watch</span>
-              </button>
+                <Link href="/video" className="w-full">
+                    <button className="flex items-center justify-center px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 w-full">
+                        <PlayIcon href="/video" className="h-4 w-4 mr-1" />
+                        <span>Watch</span>
+                    </button>
+                </Link>
             </div>
 
             {/* Watch Trailer Button - Full Width */}
