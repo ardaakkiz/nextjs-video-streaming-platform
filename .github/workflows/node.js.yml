@@ -1,0 +1,23 @@
+# .github/workflows/deploy.yml
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npm run build
+      - run: npm run export
+
+      # Add deployment steps here (e.g., deploying to Vercel or another platform)
